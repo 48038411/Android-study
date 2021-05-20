@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--组件放在Linear线性容器里面，线性容器里面一个TextView组件一个Linear容器，Linear里面两个Button组件-->
+<!--每个组件都需要layout_width和height，有两个常见属性值，match_parent是跟随父容器大小，wrap_content是根据
+内容自动扩充-->
+<!--android:orientation属性，是Linear具有的属性，vertical是竖直的，horizontal是水平的-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+<!--    android:padding是指容器与容器内的文字应该还有24dp的距离-->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:id="@+id/question_text_view"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<!--        Linear组件内的定义顺序决定了组件的显示顺序-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/true_button"
+            android:id="@+id/true_button"
+            android:layout_marginRight="10dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/false_button"
+            android:id="@+id/false_button"/>
+    </LinearLayout>
+<!--    Android以drawable开头的是引用资源-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preview_button"
+            android:src="@drawable/arrow_left"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/app_name"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/next_button"
+            android:src="@drawable/arrow_right"
+            android:contentDescription="@string/app_name"/>
+    </LinearLayout>
+</LinearLayout>
